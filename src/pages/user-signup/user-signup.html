@@ -1,0 +1,104 @@
+<!--
+  Generated template for the UserSignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User Signup</ion-title>
+  </ion-navbar>
+
+  <ion-content>
+    <form (submit)="doSignup()">
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.name" name="name" placeholder="firstname lastname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="account.email" name="email" placeholder="example@example.com"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'PHONE' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.phone" name="phone" placeholder="555-555-5555"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'ADDRESS' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.address" name="address" placeholder="1234 S. Greatness"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'CITY' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.city" name="city" placeholder="Fresno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'STATE' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.state" name="state" placeholder="Ca"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'ZIPCODE' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.zipcode" name="zipcode" placeholder="99999"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Interested in {{ 'VOLUNTEERING' | translate }} ?</ion-label>
+          <ion-input type="text" [(ngModel)]="account.vounteering" name="volunteering" placeholder="Yes or No"></ion-input>
+        </ion-item>
+
+        <!--RADIO CHOICES FOR IN NEED OF -->
+
+        <ion-list radio-group>  <!-- if we want to allow them to choose more than one, leave this commented out. if you decide only one choice, uncomment to activate group for one choice-->
+          <ion-list-header>In need of:</ion-list-header>
+
+          <ion-item>
+            <ion-label>Diapers</ion-label>
+            <ion-radio value="diapers"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Toiletries</ion-label>
+            <ion-radio value="toiletries"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Clothes</ion-label>
+            <ion-radio value="clothes"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Nonperishables</ion-label>
+            <ion-radio value="nonperishables">Nonpreshables</ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Other</ion-label>
+            <ion-radio value="other"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label fixed>If other</ion-label>
+            <ion-input type="text" name="other__radio" placeholder="..."></ion-input>
+          </ion-item>
+        </ion-list>  <!--closing tag for radio group list - as per instructions above, only remove comment if wanting one choice-->
+
+              <ion-item>
+                <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+                <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+              </ion-item>
+
+
+              <div padding>
+                <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+              </div>
+
+            </ion-list>
+          </form>
+        </ion-content>
