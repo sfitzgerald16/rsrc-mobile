@@ -10,17 +10,139 @@
 <ion-content>
   <form (submit)="doSignup()">
     <ion-list>
-
       <ion-item>
         <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.name" name="name" placeholder="firstname lastname"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="account.email" name="email" placeholder="example@example.com"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label fixed>Company</ion-label>
+        <ion-input type="text" [(ngModel)]="account.company" name="organization" placeholder="Jagucci's Travel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Phone</ion-label>
+        <ion-input type="text" [(ngModel)]="account.phone" name="phone" placeholder="555-555-5555"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="account.address" name="address" placeholder="1234 S. Greatness"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>City</ion-label>
+        <ion-input type="text" [(ngModel)]="account.city" name="city" placeholder="Fresno"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>State</ion-label>
+        <ion-input type="text" [(ngModel)]="account.state" name="state" placeholder="Ca"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Zipcode</ion-label>
+        <ion-input type="text" [(ngModel)]="account.zipcode" name="zipcode" placeholder="99999"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Mission Statement</ion-label>
+          <ion-textarea class="form-control" rows="3"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Service:</ion-label>
+        <ion-select class="form-control" name="option__service">
+          <ion-option>Non-Profit</ion-option>
+          <ion-option>Church</ion-option>
+          <ion-option>Charity</ion-option>
+          <ion-option>Other</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>If other, please state:</ion-label>
+        <ion-input type="text" class="form-control" name="input__service" placeholder="..."></ion-input>
+      </ion-item>
+
+      <!-- ION RADIO LIST -->
+
+        <ion-item>
+          <ion-label fixed>Donations You Take:</ion-label>
+        </ion-item>
+
+
+<ion-list radio-group>  <!-- if we want to allow them to choose more than one, leave this commented out. if you decide only one choice, uncomment to activate group for one choice-->
+        <ion-item>
+          <ion-label>Diapers</ion-label>
+          <ion-radio value="diapers"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Toiletries</ion-label>
+          <ion-radio value="toiletries"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Clothes</ion-label>
+          <ion-radio value="clothes"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Nonperishables</ion-label>
+          <ion-radio value="nonperishables">Nonpreshables</ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Other</ion-label>
+          <ion-radio value="other"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>If other</ion-label>
+          <ion-input type="text" name="other-radio" placeholder="..."></ion-input>
+        </ion-item>
+      </ion-list>  <!--closing tag for radio group list - as per instructions above, only remove comment if wanting one choice-->
+
+      <!--RADIO CHOICES FOR IN NEED OF -->
+
+      <ion-list radio-group>  <!-- if we want to allow them to choose more than one, leave this commented out. if you decide only one choice, uncomment to activate group for one choice-->
+        <ion-list-header>In need of:</ion-list-header>
+
+        <ion-item>
+          <ion-label>Diapers</ion-label>
+          <ion-radio value="diapers"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Toiletries</ion-label>
+          <ion-radio value="toiletries"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Clothes</ion-label>
+          <ion-radio value="clothes"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Nonperishables</ion-label>
+          <ion-radio value="nonperishables">Nonpreshables</ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Other</ion-label>
+          <ion-radio value="other"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>If other</ion-label>
+          <ion-input type="text" name="other__radio" placeholder="..."></ion-input>
+        </ion-item>
+      </ion-list>  <!--closing tag for radio group list - as per instructions above, only remove comment if wanting one choice-->
       <!--
       Want to add a Username? Here you go:
 
@@ -34,6 +156,7 @@
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
+
 
       <div padding>
         <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
