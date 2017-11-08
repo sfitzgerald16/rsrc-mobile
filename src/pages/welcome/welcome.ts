@@ -13,6 +13,11 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
+    info: {head: string, head2: string, head3: string} = {
+      head: 'Is your Organization wanting to seek assistance or volunteers? Please click below to sign up now!',
+      head2: 'Are you a new user seeking assistance or wanting to help volunteer/donate? Please clickk below to sign up now!',
+      head3: 'Already a user? Please sign in below!',
+    }
 
   constructor(public navCtrl: NavController) { }
 
@@ -22,5 +27,9 @@ export class WelcomePage {
 
   signup() {
     this.navCtrl.push('SignupPage');
+  }
+
+  usersign() {
+    this.navCtrl.push('UserSignupPage');
   }
 }

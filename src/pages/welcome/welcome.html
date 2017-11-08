@@ -7,7 +7,14 @@
     </div>
   </div>
   <div padding>
+    {{info.head}}
     <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
+
+    {{info.head2}}
+    <button ion-button block (click)="usersign()" class="user-signup">{{ 'USER SIGNUP' | translate }}</button>
+
+    {{info.head3}}
     <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+
   </div>
 </ion-content>
