@@ -7,13 +7,14 @@ import { Items } from '../../providers/providers';
 @IonicPage()
 @Component({
   selector: 'page-list-master',
-  templateUrl: 'list-master.html'
+  templateUrl: 'list-master.html',
+  providers: [Items]
 })
 export class ListMasterPage {
-  currentItems: Item[];
+  currentItems: any;
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+    this.items.query().subscribe(res=> {console.log(res)});
   }
 
   /**

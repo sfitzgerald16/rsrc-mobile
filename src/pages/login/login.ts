@@ -20,7 +20,7 @@ export class LoginPage {
   //   password: 'test'
   // };
 
-  // Our translated text strings
+  // Our translated text strings 
   private loginErrorString: string; 
 
   constructor(public navCtrl: NavController,

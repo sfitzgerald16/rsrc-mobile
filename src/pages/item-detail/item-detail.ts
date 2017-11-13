@@ -6,13 +6,15 @@ import { Items } from '../../providers/providers';
 @IonicPage()
 @Component({
   selector: 'page-item-detail',
-  templateUrl: 'item-detail.html'
+  templateUrl: 'item-detail.html',
+  providers: [Items]
 })
 export class ItemDetailPage {
   item: any;
 
-  constructor(public navCtrl: NavController, navParams: NavParams, items: Items) {
-    this.item = navParams.get('item') || items.defaultItem;
+  constructor(public navCtrl: NavController, navParams: NavParams, events: Items) {
+    this.item = navParams.get('item') || events.defaultItem;
+    console.log('data', events.query());
   }
 
 }
