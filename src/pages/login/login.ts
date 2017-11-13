@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
-import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
 import { LinkedIn } from '@ionic-native/linkedin'; 
-
+//import { Auth, User } from '@ionic/cloud-angular';
 
 @IonicPage()
 @Component({
@@ -25,14 +24,14 @@ export class LoginPage {
   private loginErrorString: string;
 
   constructor(public navCtrl: NavController,
-    public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService, private linkedin: LinkedIn) {
+    public translateService: TranslateService, private linkedin: LinkedIn ) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
   }
+
 
   scopes:any [] = ['r_basicprofile', 'rw_company_admin', 'w_share'];
 
@@ -43,21 +42,27 @@ export class LoginPage {
   //   }, (err) => {
   //     this.navCtrl.setRoot('WelcomePage');
   //     // Unable to log in
-  //     let toast = this.toastCtrl.create({
-  //       message: this.loginErrorString,
-  //       duration: 3000,
-  //       position: 'top'
-  //     });
   //     toast.present();
   //   });
   // }
 
-  
-
   login() {
     this.linkedin.login(['r_basicprofile', 'r_emailaddress'], true)
       .then(() => this.navCtrl.push(MainPage))
-      .catch( e => this.navCtrl.setRoot('WelcomePage')
-      );
+      .catch(error => {
+        this.navCtrl.setRoot('WelcomePage');
+        let toast = this.toastCtrl.create({
+          message: this.loginErrorString,
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
+      });
+      /*this.auth.login('linkedin').then(() => this.navCtrl.push(MainPage))
+      .catch( e => this.navCtrl.setRoot('WelcomePage'));*/
   }
+
 }
+
+
+
