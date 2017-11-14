@@ -34,8 +34,7 @@ export class Api {
         reqOpts.params.set(k, params[k]);
       }
     }*/
-    return this.http.get(this.url + '/' + endpoint)
-            .map((res: Response) => {console.log(res)});
+    return this.http.get(this.url + '/' + endpoint);
     
   }
 

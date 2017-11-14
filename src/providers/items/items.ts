@@ -12,12 +12,24 @@ export class Items {
     "about": "Burt is a Bear.",
   };
 
-  items: any = [];
+  data: any = [];
 
   constructor(public api: Api) { }
 
   query(params?: any) {
-    this.api.get('events');
+  
+    return new Promise(resolve => {
+      this.api.get('events')
+        .map(res => {
+          console.log(res);
+          return res;
+        })
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    });
+
   }
 
   add(item: Item) {

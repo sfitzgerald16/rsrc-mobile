@@ -14,13 +14,21 @@ export class ListMasterPage {
   currentItems: any;
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.items.query();
+    this.getEvents();
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+  }
+
+  getEvents() {
+    this.items.query()
+    .then(data => {
+      this.currentItems = data;
+      console.log(data);
+    });
   }
 
   /**
