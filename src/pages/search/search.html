@@ -19,4 +19,28 @@
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
   </ion-list>
+  <ion-grid>
+          <ion-row>
+              <ion-col align="center"><button ion-button color="stdcolor">Food</button></ion-col>
+              <ion-col><button ion-button color="stdcolor">Toiletries</button></ion-col>
+              <ion-col><button ion-button color="stdcolor">Beds</button></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><button ion-button color="stdcolor">Education</button></ion-col>
+            <ion-col><button ion-button color="stdcolor">Clothes</button></ion-col>
+            <ion-col><button ion-button color="stdcolor">Jobs</button></ion-col>
+          </ion-row>
+          <ion-list>
+              <ion-list-header>Today</ion-list-header>
+              <ion-item>
+                  <ion-avatar item-start>
+                  </ion-avatar>
+                  <h2>No Results</h2>
+                  <p></p>
+                  <ion-note item-end></ion-note>
+                </ion-item>
+          </ion-list> 
+     </ion-grid> 
+           
 </ion-content>
+
