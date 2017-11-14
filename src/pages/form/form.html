@@ -7,14 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>form</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <form>
+    <form text-wrap>
       <ion-item>
         <ion-label floating>Full Name</ion-label>
         <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>

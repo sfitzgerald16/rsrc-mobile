@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'form.html',
 })
 export class FormPage {
+  title = "My Form"
   account: { name: string, email: string, password: string, company: string, phone: string, address: string, city: string, state: string, zipcode: string } = {
     name: '',
     email: '',
@@ -30,7 +31,8 @@ export class FormPage {
       other2: ''
     };
 
-    serv: ''
+    serv: any;
+    vol: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

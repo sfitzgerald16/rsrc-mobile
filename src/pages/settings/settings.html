@@ -6,16 +6,18 @@
 <ion-content>
  <!--TRY ADDING COL - ATM GOING TO WORK ON OTHER-->
         <ion-card>
-          <ion-card-header>
-            Your Name
+          <ion-card-header text-center>
+            <h1>{{Company}}Organization Name</h1>
           </ion-card-header>
           <ion-avatar item-start>
             <img src="https://pixel.nymag.com/imgs/daily/vulture/2015/04/28/28-avatar.w710.h473.jpg" alt="">
           </ion-avatar>
-          <ion-card-content>
-            Fresno, Ca 93725
+          <ion-card-content text-center>
+            City: {{CITY}}, State: {{STATE}} Zip: {{ZIPCODE}}<br>
+            Short bio:
           </ion-card-content>
-            <button ion-button full (click)="this.form()">Form</button>
-            <button ion-button full>Events</button>
+            <button ion-button full (click)="this.form()">My Form</button>
+            <button ion-button full (click)="this.event()">Your Events</button>
+            <button ion-button full (click)="this.volunteers()">Volunteers/Volunteering</button>
     </ion-card>
 </ion-content>
