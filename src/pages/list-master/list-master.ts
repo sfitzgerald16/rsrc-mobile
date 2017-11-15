@@ -23,11 +23,19 @@ export class ListMasterPage {
   ionViewDidLoad() {
   }
 
+  doRefresh(refresh){
+    setTimeout(() => {
+      this.items.query().then(data => {
+        this.currentItems = data;
+      }); 
+      refresh.complete();
+     }, 1000);
+  }
+
   getEvents() {
     this.items.query()
     .then(data => {
       this.currentItems = data;
-      console.log(data);
     });
   }
 
@@ -40,6 +48,7 @@ export class ListMasterPage {
     addModal.onDidDismiss(item => {
       if (item) {
         this.items.add(item);
+        this.currentItems.push(item);
       }
     })
     addModal.present();
@@ -48,8 +57,10 @@ export class ListMasterPage {
   /**
    * Delete an item from the list of items.
    */
-  deleteItem(item) {
-    this.items.delete(item);
+  deleteItem(id, event) {
+    this.items.delete(id);
+    let index: number = this.currentItems.indexOf(event);
+    this.currentItems.splice(index, 1);
   }
 
   /**

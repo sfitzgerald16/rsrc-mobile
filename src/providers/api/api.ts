@@ -9,10 +9,10 @@ import 'rxjs/add/operator/map';
 export class Api {
   url: string = 'http://localhost:8080/api';
 
-  // private allow = new Headers({
-  //   'Access-Control-Allow-Origin': '*',
-  //   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-  // });
+  //  public allow = new Headers({
+  //    'Access-Control-Allow-Origin': '*',
+  //    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+  //  });
   
   
   constructor(public http: HttpClient) {
@@ -20,7 +20,9 @@ export class Api {
   
 
   get(endpoint: string, params?: any, reqOpts?: any) {
-    
+    var allow = new Headers();
+    allow.append('Access-Control-Allow-Origin','*');
+    allow.append('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
     /*if (!reqOpts) {
       reqOpts = {
         params: new HttpParams()
@@ -38,16 +40,17 @@ export class Api {
     
   }
 
-  post(endpoint: string, body: any, reqOpts?: any) {
-    return this.http.post(this.url + '/' + endpoint, body, reqOpts);
+  post(endpoint: string, body: object, reqOpts?: any) {
+    let loc = this.url + '/' + endpoint;
+    return this.http.post(loc, body, reqOpts);
   }
 
   put(endpoint: string, body: any, reqOpts?: any) {
     return this.http.put(this.url + '/' + endpoint, body, reqOpts);
   }
 
-  delete(endpoint: string, reqOpts?: any) {
-    return this.http.delete(this.url + '/' + endpoint, reqOpts);
+  delete(endpoint: string, id: string, reqOpts?: any) {
+    return this.http.delete(this.url + '/' + endpoint + "/" + id, reqOpts);
   }
 
   patch(endpoint: string, body: any, reqOpts?: any) {
