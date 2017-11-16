@@ -62,7 +62,7 @@ export class ListMasterPage {
     let index: number = this.currentItems.indexOf(event);
     this.currentItems.splice(index, 1);
   }
-
+ 
   /**
    * Navigate to the detail page for this item.
    */
