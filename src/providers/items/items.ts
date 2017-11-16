@@ -16,8 +16,12 @@ export class Items {
 
   constructor(public api: Api) { }
 
-  query(params?: any) {
-  
+  query(params?: string) {
+
+    /*if(params) {
+      
+    }*/
+    
     return new Promise(resolve => {
       this.api.get('events')
         .map(res => {
@@ -33,9 +37,27 @@ export class Items {
   }
 
   add(item: Item) {
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
+    headers.append("Access-Control-Allow-Origin", "*");
+    headers.append("Access-Control-Allow-Methods","POST");
+    headers.append("Access-Control-Allow-Headers","Content-Type, Authorization");
+    this.api.post('events', item, headers)
+    .subscribe(data => {
+       console.log(data);
+    }, error => {
+      console.log(error); 
+    });
   }
 
-  delete(item: Item) {
+  delete(item: string) {
+    this.api.delete('events', item)
+    .subscribe(data => {
+       console.log(data);
+    }, error => {
+      console.log(error); 
+    });
   }
 
 }
