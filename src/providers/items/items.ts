@@ -16,7 +16,11 @@ export class Items {
 
   constructor(public api: Api) { }
 
-  query(params?: any) {
+  query(params?: string) {
+
+    /*if(params) {
+      
+    }*/
     
     return new Promise(resolve => {
       this.api.get('events')
