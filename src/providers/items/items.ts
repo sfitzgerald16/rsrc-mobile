@@ -16,23 +16,37 @@ export class Items {
 
   constructor(public api: Api) { }
 
-  query(params?: string) {
+  query(params?: any) {
 
-    /*if(params) {
+    if (params) {
+
+      return new Promise(resolve => {
+        this.api.get('events', params)
+          .map(res => {
+            console.log("param",res);
+            return res;
+          })
+          .subscribe(data => {
+            this.data = data;
+            resolve(this.data);
+          });
+      });
       
-    }*/
-    
-    return new Promise(resolve => {
-      this.api.get('events')
-        .map(res => {
-          console.log(res);
-          return res;
-        })
-        .subscribe(data => {
-          this.data = data;
-          resolve(this.data);
-        });
-    });
+    } else {
+
+      return new Promise(resolve => {
+        this.api.get('events')
+          .map(res => {
+            console.log(res);
+            return res;
+          })
+          .subscribe(data => {
+            this.data = data;
+            resolve(this.data);
+          });
+      });
+
+    }
 
   }
 

@@ -20,24 +20,26 @@ export class Api {
   
 
   get(endpoint: string, params?: any, reqOpts?: any) {
-    var allow = new Headers();
-    allow.append('Access-Control-Allow-Origin','*');
-    allow.append('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
    
-    // if (!reqOpts) {
-    //   reqOpts = {
-    //     params: new HttpParams()
-    //   };
-    // }
+    if (!reqOpts) {
+      reqOpts = {
+        params: new HttpParams()
+      };
+    }
 
     // Support easy query params for GET requests
-    /*if (params) {
+     if (params) {
       reqOpts.params = new HttpParams();
-      /*for (let k in params) {
+      for (let k in params) {
         reqOpts.params.set(k, params[k]);
+        console.log("params")
       }
-      return this.http.get(this.url + '/' + endpoint, params);
-  }*/
+
+      let loc = params.title;
+      
+      return this.http.get(this.url + '/' + endpoint + "/" + loc);
+
+    }
 
     return this.http.get(this.url + '/' + endpoint);
     

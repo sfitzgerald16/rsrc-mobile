@@ -48,7 +48,7 @@ export class ListMasterPage {
     addModal.onDidDismiss(item => {
       if (item) {
         this.items.add(item);
-        this.currentItems.push(item);
+        this.getEvents();
       }
     })
     addModal.present();

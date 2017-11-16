@@ -24,10 +24,11 @@ export class SearchPage {
       this.currentItems = [];
       return;
     }
-    this.currentItems = this.items.query(
-      val
-    ).then(data => {
-      this.currentItems = data;
+    this.currentItems = this.items.query({
+      title: val
+    })
+    .then(data => { 
+      this.currentItems = data 
     });
   }
 
