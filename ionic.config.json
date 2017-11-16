@@ -1,10 +1,6 @@
 {
   "name": "hardShop",
   "app_id": "",
-<<<<<<< HEAD
-  "type": "ionic-angular",
-  "integrations": {}
-=======
   "proxies": [
     {
       "path": "/api",
@@ -16,5 +12,4 @@
     "cordova": {}
   }
 
->>>>>>> 6620e8e0e167c3484283a9a90653fd4f0ff2d983
 }
