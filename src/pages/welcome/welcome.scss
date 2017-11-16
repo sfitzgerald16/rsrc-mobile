@@ -35,9 +35,9 @@ page-welcome {
   }
   button.login {
     margin-top: 25px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-    color: #333;
+    color: rgb(84, 131, 86);
 
     &.activated {
       background-color: rgb(220, 220, 220);
