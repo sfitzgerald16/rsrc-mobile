@@ -1,0 +1,115 @@
+<!--
+  Generated template for the FormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form text-wrap>
+      <ion-item>
+        <ion-label floating>Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Company</ion-label>
+        <ion-input type="text" [(ngModel)]="account.company" name="Company"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="text" [(ngModel)]="account.phone" name="Phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="account.address" name="Address"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>State</ion-label>
+        <ion-input type="text" [(ngModel)]="account.state" name="State"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" [(ngModel)]="account.city" name="City"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Zipcode</ion-label>
+        <ion-input type="text" [(ngModel)]="account.zipcode" name="Zipcode"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Service</ion-label>
+        <ion-select [(ngModel)]="serv" [ngModelOptions]="{standalone: true}">
+          <ion-option value="nonprofit">Non-Profit</ion-option>
+          <ion-option value="church">Church</ion-option>
+          <ion-option value="charity">Charity</ion-option>
+          <ion-option value="other_service">Other</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>If other, please state:</ion-label>
+        <ion-input type="text" [(ngModel)]="ifother.other1" name="other1"></ion-input>
+      </ion-item>
+      
+      <ion-list radio-group>
+          <ion-label>
+            In Need Of
+          </ion-label>
+        
+          <ion-item>
+            <ion-label>Diapers</ion-label>
+            <ion-radio checked="true" value="Diapers"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Toiletries</ion-label>
+            <ion-radio value="Toiletries"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Clothes</ion-label>
+            <ion-radio value="clothes"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Nonperishables</ion-label>
+            <ion-radio value="Nonperishables"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Other</ion-label>
+            <ion-radio value="other"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>If other, please state:</ion-label>
+            <ion-input type="text" [(ngModel)]="ifother.other2" name="other2" placeholder="(or more than one)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>In need of Volunteers?</ion-label>
+            <ion-select [(ngModel)]="vol" name="volunteer">
+                <ion-option value="Yes">Yes</ion-option>
+                <ion-option value="No">No</ion-option>
+              </ion-select>
+          </ion-item>
+        </ion-list> <!-- END OF RADIO LIST -->
+        
+
+        <button ion-button full type="submit">Submit</button>
+
+    </form>
+</ion-content>
