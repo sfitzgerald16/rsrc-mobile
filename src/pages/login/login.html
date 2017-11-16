@@ -8,12 +8,12 @@
 
 
 <ion-content>
-  <form (submit)="doLogin()">
+  <form (submit)="login()">
     <ion-list>
 
       <ion-item>
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-input type="email" name="email"></ion-input>
       </ion-item>
 
       <!--
@@ -27,7 +27,7 @@
 
       <ion-item>
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-input type="password" name="password"></ion-input>
       </ion-item>
 
       <div padding>

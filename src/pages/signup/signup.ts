@@ -8,7 +8,7 @@ import { MainPage } from '../pages';
 @IonicPage()
 @Component({
   selector: 'page-signup',
-  templateUrl: 'signup.html'
+  templateUrl: 'signup.html',
 })
 export class SignupPage {
   // The account fields for the login form.
@@ -39,7 +39,7 @@ export class SignupPage {
       this.navCtrl.push(MainPage);
     }, (err) => {
 
-      this.navCtrl.push(MainPage);
+      this.navCtrl.setRoot('WelcomePage');
 
       // Unable to sign up
       let toast = this.toastCtrl.create({

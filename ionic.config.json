@@ -1,6 +1,20 @@
 {
-  "name": "rsrc",
+  "name": "hardShop",
   "app_id": "",
+<<<<<<< HEAD
   "type": "ionic-angular",
   "integrations": {}
+=======
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://127.0.0.1:8080"
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+
+>>>>>>> 6620e8e0e167c3484283a9a90653fd4f0ff2d983
 }

@@ -3,11 +3,11 @@
   <div class="splash-info">
     <div class="splash-logo"></div>
     <div class="splash-intro">
-      {{ 'WELCOME_INTRO' | translate }}
+      {{ 'Sign in as a chairty or non-profit or continue as a guest.' | translate }}
     </div>
   </div>
   <div padding>
-    <button ion-button block (click)="signup()">{{ 'SIGNUP' | translate }}</button>
-    <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+    <button ion-button block (click)="login()">{{ 'Login with LinkedIn' | translate }}</button>
+    <button ion-button block (click)="guest()" class="login">{{ 'Guest' | translate }}</button>
   </div>
 </ion-content>
