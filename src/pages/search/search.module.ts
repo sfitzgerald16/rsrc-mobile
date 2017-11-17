@@ -4,6 +4,7 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { SearchPage } from './search';
 import { Items } from '../../providers/items/items';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { Items } from '../../providers/items/items';
   ],
   imports: [
     IonicPageModule.forChild(SearchPage),
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    PipesModule
   ],
   exports: [
     SearchPage

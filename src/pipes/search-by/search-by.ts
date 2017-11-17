@@ -1,9 +1,10 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, Injectable } from '@angular/core';
 import * as _ from "lodash";
 
 @Pipe({
   name: 'searchBy'
 })
+@Injectable()
 export class SearchByPipe implements PipeTransform {
   transform(data: Array<any>, props: Array<any>, arg: string) {
     // Pass in 1 or more properties to match,
