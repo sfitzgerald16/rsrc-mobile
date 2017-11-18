@@ -11,11 +11,18 @@ import { Items } from '../../providers/providers';
   templateUrl: 'search.html',
 })
 export class SearchPage {
+  public arr : Array<string> = [];
+  allParam : boolean = true;
+  catParam : boolean = false;
   val: string = '';
   currentItems: any = [];
+  public relationship;
+  public sub;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { 
     this.currentItems = this.getEvents();
+    this.relationship = "all";
+    this.sub = "food";
   }
 
   /**
@@ -53,6 +60,19 @@ export class SearchPage {
     this.navCtrl.push('ItemDetailPage', {
       item: item
     });
+  }
+
+  selectedAll() {
+    this.arr.push('title');
+    this.arr.push('provider');
+    this.catParam = false;
+    this.allParam = true;
+  }
+
+  selectedCat() {
+    this.arr = [];
+    this.allParam = false;
+    this.catParam = true;
   }
 
 }

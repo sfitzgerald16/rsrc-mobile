@@ -9,8 +9,18 @@
 
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
-  <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems | searchBy: ['title', 'provider']: [val] ">
+ 
+  <ion-segment [(ngModel)]="relationship" color="primary">
+    <ion-segment-button value="all" (ionSelect)="selectedAll()">
+      All
+    </ion-segment-button>
+    <ion-segment-button value="cat" (ionSelect)="selectedCat()">
+      Categories
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-list *ngIf="allParam">
+    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems | searchBy: arr: [val] ">
       <ion-avatar item-start>
         <img [src]="" />
       </ion-avatar>
@@ -18,5 +28,37 @@
       <p>{{ item.provider }}</p>
       <ion-note item-end *ngIf=""></ion-note>
     </button>
+  </ion-list>
+
+  <ion-list *ngIf="catParam">
+
+<!-- TO BE CHANGED  -->
+
+      <ion-segment [(ngModel)]="sub" color="primary" (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="food">
+            Food
+          </ion-segment-button>
+          <ion-segment-button value="clothing">
+            Clothing
+          </ion-segment-button>
+          <ion-segment-button value="edu">
+            Education
+          </ion-segment-button>
+          <ion-segment-button value="career">
+            Career
+          </ion-segment-button>
+          <ion-segment-button value="health">
+            Health
+          </ion-segment-button>
+      </ion-segment>
+      
+      <button ion-item (click)="openItem(item)" *ngFor="">
+        <ion-avatar item-start>
+          <img [src]="" />
+        </ion-avatar>
+        <h2></h2>
+        <p></p>
+        <ion-note item-end *ngIf=""></ion-note>
+      </button>
   </ion-list>
 </ion-content> 
