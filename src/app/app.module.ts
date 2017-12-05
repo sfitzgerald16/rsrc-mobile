@@ -8,6 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AccordionModule } from "ng2-accordion";
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -47,6 +48,7 @@ export function provideSettings(storage: Storage) {
     BrowserModule,
     HttpClientModule,
     ResourcesPageModule,
+    AccordionModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
