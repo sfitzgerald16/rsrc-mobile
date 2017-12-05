@@ -15,6 +15,7 @@ import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { LinkedIn } from '@ionic-native/linkedin';
+import { ResourcesPageModule } from '../pages/resources/resources.module'
 //import { SearchByPipe } from '../pipes/search-by/search-by';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -45,6 +46,7 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
+    ResourcesPageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
