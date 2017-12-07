@@ -1,3 +1,28 @@
-page-resources {
+.title {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    color: #6b9c75;
+}
+.panel-group {
+    height: 100vh;
+}
 
+.panel-title {
+    font-size: 36px;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+}
+ul {
+padding: 0;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+accordion-group.women{
+    color: red;
 }
