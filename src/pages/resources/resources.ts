@@ -10,7 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-resources',
+  selector: 'resources',
   templateUrl: 'resources.html',
 })
 export class ResourcesPage {

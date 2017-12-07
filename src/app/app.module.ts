@@ -8,6 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { AccordionModule } from "ng2-accordion";
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -15,6 +16,7 @@ import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { LinkedIn } from '@ionic-native/linkedin';
+import { ResourcesPageModule } from '../pages/resources/resources.module'
 //import { SearchByPipe } from '../pipes/search-by/search-by';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -45,6 +47,8 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpClientModule,
+    ResourcesPageModule,
+    AccordionModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
