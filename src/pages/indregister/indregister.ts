@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { MainPage } from '../pages';
 
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-indregister',
+  templateUrl: 'indregister.html'
 })
-export class LoginPage {
+export class IndregisterPage {
  
   constructor(public navCtrl: NavController) { }
   // Our translated text strings 
@@ -17,7 +17,7 @@ export class LoginPage {
   
   login() {
   
-      this.navCtrl.push('IndregisterPage');
+      this.navCtrl.push('WelcomePage');
     
   }
 
