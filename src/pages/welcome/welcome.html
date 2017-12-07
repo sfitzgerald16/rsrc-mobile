@@ -3,11 +3,32 @@
   <div class="splash-info">
     <div class="splash-logo"></div>
     <div class="splash-intro">
-      {{ 'Sign in as a charity or non-profit or continue as a guest.' | translate }}
+      {{ 'WELCOME_TITLE' | translate }}
     </div>
   </div>
   <div padding>
-    <button ion-button block (click)="login()">{{ 'Login with LinkedIn' | translate }}</button>
-    <button ion-button block (click)="guest()" class="login">{{ 'Guest' | translate }}</button>
+    <form (submit)="login()">
+      <ion-list>
+  
+        <ion-item>
+          <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+          
+        
+        <ion-input type="email" name="email" 
+         pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+        </ion-item>
+          <ion-item>
+          <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" name="password"></ion-input>
+        </ion-item>
+  
+        <div padding>
+          <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        </div>
+        <div padding>
+          <ion-label color="primary" block> <a>New User ? {{ 'SIGNUP_TITLE' | translate }} </a></ion-label>
+        </div>
+      </ion-list>
+    </form>
   </div>
 </ion-content>
