@@ -26,7 +26,7 @@
           <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
         </div>
         <div padding>
-          <ion-label color="primary" block> <a>New User ? {{ 'SIGNUP_TITLE' | translate }} </a></ion-label>
+          <ion-label class="signuptext" color="primary" block> <p (click)="openModal()">New User ? {{ 'SIGNUP_TITLE' | translate }} </p></ion-label>
         </div>
       </ion-list>
     </form>

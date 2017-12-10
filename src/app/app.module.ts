@@ -15,7 +15,7 @@ import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
-import { LinkedIn } from '@ionic-native/linkedin';
+import { SignupModalPage } from '../pages/signup-modal/signup-modal';
 import { ResourcesPageModule } from '../pages/resources/resources.module'
 //import { SearchByPipe } from '../pipes/search-by/search-by';
 // The translate loader needs to know where to load i18n files
@@ -42,6 +42,7 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
+    SignupModalPage
 
   ],
   imports: [
@@ -61,7 +62,8 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    SignupModalPage
   ],
   providers: [
     Api,
@@ -73,7 +75,6 @@ export function provideSettings(storage: Storage) {
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    LinkedIn
   ]
 })
 export class AppModule { }
