@@ -14,13 +14,6 @@ export class IndregisterPage {
   // Our translated text strings 
   
 
-  
-  login() {
-  
-      this.navCtrl.push('WelcomePage');
-    
-  }
-
 }
 
 

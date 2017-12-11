@@ -11,16 +11,7 @@ import { MainPage } from '../pages';
 export class LoginPage {
  
   constructor(public navCtrl: NavController) { }
-  // Our translated text strings 
   
-
-  
-  login() {
-  
-      this.navCtrl.push('IndregisterPage');
-    
-  }
-
 }
 
 

@@ -1,11 +1,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Organization Registraion Form</ion-title>
+    <ion-title>Organization Registration Form</ion-title>
   </ion-navbar>
 
 </ion-header>
-
+ 
 
 <ion-content>
   <form (submit)="login()">
@@ -21,10 +21,21 @@
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Address </ion-label>
+        <ion-label fixed>Street address </ion-label>
         <ion-input type="text" name="orgAddress"></ion-input>
       </ion-item>
-
+      <ion-item>
+        <ion-label fixed>City </ion-label>
+        <ion-input type="text" name="orgCity"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>State </ion-label>
+        <ion-input type="text" name="orgState"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zip code </ion-label>
+        <ion-input type="text" name="orgzip"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label fixed>Phone # </ion-label>
         <ion-input type="text" name="phnumb"></ion-input>
@@ -41,7 +52,7 @@
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>Register</button>
+        <button ion-button color="primary" block>Sign Up</button>
       </div>
 
     </ion-list>
