@@ -1,37 +1,58 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+    <ion-title>Organization Registration Form</ion-title>
   </ion-navbar>
 
 </ion-header>
-
+ 
 
 <ion-content>
   <form (submit)="login()">
     <ion-list>
+      <ion-item> 
+        <ion-label wrap>Name of the Organization</ion-label>
+        <ion-input type="text" name="OrgName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Tax Id </ion-label>
+        <ion-input type="text" name="taxId"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Street address </ion-label>
+        <ion-input type="text" name="orgAddress"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>City </ion-label>
+        <ion-input type="text" name="orgCity"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>State </ion-label>
+        <ion-input type="text" name="orgState"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zip code </ion-label>
+        <ion-input type="text" name="orgzip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Phone # </ion-label>
+        <ion-input type="text" name="phnumb"></ion-input>
+      </ion-item>
 
       <ion-item>
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
         <ion-input type="email" name="email"></ion-input>
       </ion-item>
 
-      <!--
-      Want to use a Username instead of an Email? Here you go:
-
-      <ion-item>
-        <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-      </ion-item>
-      -->
-
-      <ion-item>
+        <ion-item>
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" name="password"></ion-input>
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button ion-button color="primary" block>Sign Up</button>
       </div>
 
     </ion-list>
