@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Organization Registraion Form</ion-title>
+    <ion-title>User Registraion Form</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,21 +10,14 @@
 <ion-content>
   <form (submit)="login()">
     <ion-list>
-      <ion-item> 
-        <ion-label wrap>Name of the Organization</ion-label>
-        <ion-input type="text" name="OrgName"></ion-input>
-      </ion-item>
-
       <ion-item>
-        <ion-label fixed>Tax Id </ion-label>
-        <ion-input type="text" name="taxId"></ion-input>
+        <ion-label fixed>First Name</ion-label>
+        <ion-input type="text" name="firstName"></ion-input>
       </ion-item>
-
       <ion-item>
-        <ion-label fixed>Address </ion-label>
-        <ion-input type="text" name="orgAddress"></ion-input>
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input type="text" name="lastName"></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-label fixed>Phone # </ion-label>
         <ion-input type="text" name="phnumb"></ion-input>
@@ -39,9 +32,9 @@
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" name="password"></ion-input>
       </ion-item>
-
+  
       <div padding>
-        <button ion-button color="primary" block>Register</button>
+        <button ion-button color="primary" block>Sign Up</button>
       </div>
 
     </ion-list>
