@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Http, Headers, Response } from '@angular/http';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { MainPage } from '../pages';
+import { ResourcesPage } from '../resources/resources';
 import { SignupModalPage } from "../signup-modal/signup-modal";
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -14,15 +16,30 @@ import { SignupModalPage } from "../signup-modal/signup-modal";
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
+  headers: Headers;
 
-  constructor(public navCtrl: NavController, private modal: ModalController) { }
+  constructor(public navCtrl: NavController, private modal: ModalController, private http: Http) {
+    this.headers = new Headers();
+    this.headers.append('Content-Type','application/json');
+   }
 
-  login() {
-    this.navCtrl.push('LoginPage');
+  login(email: string, password: string) {
+    // this.http
+    // // Not sure what the url or stuff to send in will look like here
+    //   .post('http://localhost/', { email, password }, { headers: this.headers })
+    //   .toPromise()
+    //   .then((result: any) => {
+    //     console.log(result);
+
+    //     // If result is a good login go to resource page
+    //     this.navCtrl.push(ResourcesPage);
+    //   });
+    console.log("Logging in: ", {email, password});
+    this.navCtrl.push(ResourcesPage);
   }
 
   signup() {
-    this.navCtrl.push('SignupPage');
+    this.navCtrl.push('LoginPage');
   }
 
   guest() {

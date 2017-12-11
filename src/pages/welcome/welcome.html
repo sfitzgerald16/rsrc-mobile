@@ -7,7 +7,7 @@
     </div>
   </div>
   <div padding>
-    <form (submit)="login()">
+    <form (submit)="login(email, password)">
       <ion-list>
   
         <ion-item>
@@ -15,16 +15,19 @@
           
         
         <ion-input type="email" name="email" 
-         pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+          pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
+          [(ngModel)]="email"></ion-input>
         </ion-item>
           <ion-item>
           <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-          <ion-input type="password" name="password"></ion-input>
+          <ion-input type="password" name="password"
+           [(ngModel)]="password"></ion-input>
         </ion-item>
   
         <div padding>
           <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
         </div>
+
         <div padding>
           <ion-label class="signuptext" color="primary" block> <p (click)="openModal()">New User ? {{ 'SIGNUP_TITLE' | translate }} </p></ion-label>
         </div>
