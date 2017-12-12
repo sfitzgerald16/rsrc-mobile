@@ -24,9 +24,9 @@ export class WelcomePage {
    }
 
   login(email: string, password: string) {
-    // this.http
+    // this.api
     // // Not sure what the url or stuff to send in will look like here
-    //   .post('http://localhost/', { email, password }, { headers: this.headers })
+    //   .post('/user/login', { email, password }, { headers: this.headers })
     //   .toPromise()
     //   .then((result: any) => {
     //     console.log(result);
@@ -35,7 +35,7 @@ export class WelcomePage {
     //     this.navCtrl.push(ResourcesPage);
     //   });
     console.log("Logging in: ", {email, password});
-    this.navCtrl.push(ResourcesPage);
+    this.navCtrl.push(MainPage);
   }
 
   signup() {
