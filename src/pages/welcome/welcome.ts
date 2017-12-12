@@ -4,6 +4,9 @@ import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angu
 import { MainPage } from '../pages';
 import { ResourcesPage } from '../resources/resources';
 import { SignupModalPage } from "../signup-modal/signup-modal";
+
+import "rxjs";
+
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -20,22 +23,23 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController, private modal: ModalController, private http: Http) {
     this.headers = new Headers();
-    this.headers.append('Content-Type','application/json');
-   }
+    this.headers.append('Content-Type', 'application/json');
+  }
 
   login(email: string, password: string) {
-    // this.api
-    // // Not sure what the url or stuff to send in will look like here
-    //   .post('/user/login', { email, password }, { headers: this.headers })
-    //   .toPromise()
-    //   .then((result: any) => {
-    //     console.log(result);
-
-    //     // If result is a good login go to resource page
-    //     this.navCtrl.push(ResourcesPage);
-    //   });
-    console.log("Logging in: ", {email, password});
-    this.navCtrl.push(MainPage);
+    this.http
+      .post('http://localhost:8080/users/users/login', { email, password }, { headers: this.headers })
+      .toPromise()
+      .then((result: any) => {
+        const res = result.json();
+        console.log(res);
+        if (res.success) {
+          // If result is a good login go to resource page
+          this.navCtrl.push(MainPage);
+        } else {
+          // Login failed alert user
+        }
+      });
   }
 
   signup() {
