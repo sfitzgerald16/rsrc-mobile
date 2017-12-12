@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { UserService } from '../../providers/user/user';
 
-/**
- * The Welcome Page is a splash page that quickly describes the app,
- * and then directs the user to create an account or log in.
- * If you'd like to immediately put the user onto a login/signup page,
- * we recommend not using the Welcome page.
-*/
 @IonicPage()
 @Component({
   selector: 'page-welcome',
@@ -23,4 +18,31 @@ export class WelcomePage {
   signup() {
     this.navCtrl.push('SignupPage');
   }
+
+  onLoginSubmit() {
+    this.processing = true;
+    this.disableForm();
+    // console.log("successfully clicked button");
+    // console.log("email from form " + this.form.get('email').value);
+    const user = {
+      email: this.form.get('email').value,
+      password: this.form.get('password').value
+    };
+    // console.log("user email is: " + user.email);
+    this.authService.login(user).subscribe(data => {
+      // console.log("auth service response " + data);
+      if (data) {
+        this.authService.storeUserData(data);
+        // console.log('data was found');
+      } else {
+        console.log('no data here');
+      }
+      this.router.navigate(['/profile']);
+    });
+    console.log('b');
+    this.processing = false;
+    this.form.reset()
+    this.enableForm();
+  }
+
 }
