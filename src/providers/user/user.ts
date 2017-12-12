@@ -16,6 +16,11 @@ export class UserService {
   login(user) {
     return this.http.post(this.apipath, user).map(res => res.json());
   }
+
+  storeUserData(user) {
+    localStorage.setItem("user", JSON.stringify(user));
+    this.user = user;
+  }
   //   seq.subscribe((res: any) => {
   //     // If the API returned a successful response, mark the user as logged in
   //     if (res.status == 'success') {

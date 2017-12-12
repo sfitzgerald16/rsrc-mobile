@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { Http, Headers, Response } from '@angular/http';
+import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
+import { MainPage } from '../pages';
 import { UserService } from '../../providers/user/user';
 
 @IonicPage()
@@ -8,41 +10,29 @@ import { UserService } from '../../providers/user/user';
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
+  headers: Headers;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, private userService: UserService) { }
 
-  login() {
-    this.navCtrl.push('LoginPage');
+  login(email: string, password: string) {
+    const user = {
+      email: email,
+      password: password
+    };
+    this.userService.login(user).subscribe(data => {
+      if (data) {
+        this.userService.storeUserData(data);
+        console.log(data);
+      } else {
+        console.log('no data here');
+      }
+      // NAVIGATE TO MAIN PAGE HERE
+    });
+
   }
 
   signup() {
     this.navCtrl.push('SignupPage');
-  }
-
-  onLoginSubmit() {
-    this.processing = true;
-    this.disableForm();
-    // console.log("successfully clicked button");
-    // console.log("email from form " + this.form.get('email').value);
-    const user = {
-      email: this.form.get('email').value,
-      password: this.form.get('password').value
-    };
-    // console.log("user email is: " + user.email);
-    this.authService.login(user).subscribe(data => {
-      // console.log("auth service response " + data);
-      if (data) {
-        this.authService.storeUserData(data);
-        // console.log('data was found');
-      } else {
-        console.log('no data here');
-      }
-      this.router.navigate(['/profile']);
-    });
-    console.log('b');
-    this.processing = false;
-    this.form.reset()
-    this.enableForm();
   }
 
 }
