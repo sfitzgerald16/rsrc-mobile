@@ -1,0 +1,61 @@
+<!--
+  Generated template for the OrgprofileeditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Organization Profile Edit Page</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+<ion-label   color='primary'>Name of Organization</ion-label>
+<ion-input  type='text' name='orgname' value='Helping Hands Org'></ion-input>
+</ion-item>
+<ion-item>
+<ion-label  color='primary'>Street address</ion-label>
+<ion-input  type='text' name='orgaddr' value='111, Main Street'></ion-input>
+</ion-item>
+<ion-item>
+<ion-label  color='primary'>City</ion-label>
+<ion-input  type='text' name='orgcity' value='Fresno'></ion-input>
+</ion-item>
+<ion-item>
+<ion-label  color='primary'>State</ion-label>
+<ion-input type='text' name='orgstate' value='CA'></ion-input>
+</ion-item>
+<ion-item>
+<ion-label  color='primary'>Zip code</ion-label>
+<ion-input  type='text' name='orgzipcode' value='99999'></ion-input>
+</ion-item>
+<ion-item>
+<ion-label  color='primary'>Phone </ion-label>
+<ion-input  type='text' name='orgphone' value='222-1111-1111'></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label  color='primary'>{{ 'EMAIL' | translate }}</ion-label>
+<ion-input type='email' name='orgemail' value='OrgExample@example.com'></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color='primary' fixed>Old Password</ion-label>
+  <ion-input type="password" name="oldpassword" value=""></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color='primary' fixed>New Password</ion-label>
+  <ion-input type="password" name="newpassword" value=""></ion-input>
+</ion-item>
+
+<div padding>
+<button ion-button color="primary" block>Update</button>
+</div>
+</ion-list>
+
+
+
+
+</ion-content>

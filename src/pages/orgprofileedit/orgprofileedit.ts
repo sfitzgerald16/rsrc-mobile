@@ -2,26 +2,24 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MainPage } from '../pages';
 /**
- * Generated class for the IndprofilePage page.
+ * Generated class for the OrgprofileeditPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @IonicPage()
-@Component({ 
-  selector: 'page-indprofile',
-  templateUrl: 'indprofile.html',
+@Component({
+  selector: 'page-orgprofileedit',
+  templateUrl: 'orgprofileedit.html',
 })
-export class IndprofilePage {
+export class OrgprofileeditPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad IndprofilePage');
+    console.log('ionViewDidLoad OrgprofileeditPage');
   }
-  indproedit(){
-  this.navCtrl.push('IndprofileeditPage');
-}
+
 }

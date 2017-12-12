@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MainPage } from '../pages';
 /**
- * Generated class for the IndprofilePage page.
+ * Generated class for the IndprofileeditPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,16 @@ import { MainPage } from '../pages';
 
 @IonicPage()
 @Component({ 
-  selector: 'page-indprofile',
-  templateUrl: 'indprofile.html',
+  selector: 'page-indprofileedit',
+  templateUrl: 'indprofileedit.html',
 })
-export class IndprofilePage {
+export class IndprofileeditPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad IndprofilePage');
+    console.log('ionViewDidLoad IndprofileeditPage');
   }
-  indproedit(){
-  this.navCtrl.push('IndprofileeditPage');
-}
+
 }

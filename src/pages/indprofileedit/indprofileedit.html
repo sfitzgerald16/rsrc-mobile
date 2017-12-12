@@ -1,0 +1,51 @@
+<!--
+  Generated template for the IndprofileeditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User Profile Edit Page</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <form >
+    <ion-list>
+      <ion-item>
+        <ion-label  color='primary'>First Name</ion-label>
+        <ion-input  type="text" name="firstName" value="Smith"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color='primary' fixed>Last Name</ion-label>
+        <ion-input type="text" name="lastName" value = "Jmith"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color='primary' fixed>Phone # </ion-label>
+        <ion-input type="text" name="phnumb"value="111-1111-1111"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color='primary' fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" name="email"value='example@example.com'></ion-input>
+      </ion-item>
+
+        <ion-item>
+        <ion-label color='primary' fixed>Old Password</ion-label>
+        <ion-input type="password" name="password" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color='primary' fixed>New Password</ion-label>
+        <ion-input type="password" name="password" value=""></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block>Update</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+</ion-content>

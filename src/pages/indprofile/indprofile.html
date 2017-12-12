@@ -12,7 +12,7 @@
  
 </ion-header>
 <ion-content >
-<form>
+<form (submit)="indproedit()">
   <ion-list>
     <ion-item>
       <ion-label fixed color='primary'>First Name</ion-label>
@@ -24,22 +24,18 @@
       <ion-label fixed color='secondary'>Jmith</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Phone # </ion-label>
-      <ion-input type="text" name="phnumb"></ion-input>
+      <ion-label fixed color='primary'>Phone </ion-label>
+      <ion-label  color='secondary'>111-1111-1111</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-input type="email" name="email"></ion-input>
+      <ion-label fixed color='primary'>{{ 'EMAIL' | translate }}</ion-label>
+      <ion-label color='secondary'>example@example.com</ion-label>
     </ion-item>
 
-      <ion-item>
-      <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-      <ion-input type="password" name="password"></ion-input>
-    </ion-item>
-
+   
     <div padding>
-      <button ion-button color="primary" block>Sign Up</button>
+      <button ion-button color="primary" block>Edit</button>
     </div>
   </ion-list>
 </form>
