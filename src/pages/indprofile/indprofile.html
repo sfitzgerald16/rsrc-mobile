@@ -1,0 +1,46 @@
+<!--
+  Generated template for the IndprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title color='primary'>User Profile Page</ion-title>
+  </ion-navbar>
+ 
+</ion-header>
+<ion-content >
+<form>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed color='primary'>First Name</ion-label>
+      <ion-label fixed color='secondary'>Smith</ion-label>
+      
+    </ion-item>
+    <ion-item>
+      <ion-label fixed color='primary'>Last Name</ion-label>
+      <ion-label fixed color='secondary'>Jmith</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Phone # </ion-label>
+      <ion-input type="text" name="phnumb"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+      <ion-input type="email" name="email"></ion-input>
+    </ion-item>
+
+      <ion-item>
+      <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+      <ion-input type="password" name="password"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" block>Sign Up</button>
+    </div>
+  </ion-list>
+</form>
+</ion-content>
