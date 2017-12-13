@@ -8,47 +8,47 @@
  
 
 <ion-content>
-  <form (submit)="login()">
+  <form (submit)="register(organization)">
     <ion-list>
       <ion-item> 
-        <ion-label wrap>Name of the Organization</ion-label>
-        <ion-input type="text" name="OrgName"></ion-input>
+        <ion-label color='primary'>Name of the Organization</ion-label>
+        <ion-input type="text" name="OrgName" [(ngModel)]="organization.name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Tax Id </ion-label>
-        <ion-input type="text" name="taxId"></ion-input>
+        <ion-label color='primary'>Tax Id </ion-label>
+        <ion-input type="text" name="taxId" [(ngModel)]="organization.taxIdNumber"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Street address </ion-label>
-        <ion-input type="text" name="orgAddress"></ion-input>
+        <ion-label color='primary'>Street address </ion-label>
+        <ion-input type="text" name="orgAddress" [(ngModel)]="organization.address"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>City </ion-label>
-        <ion-input type="text" name="orgCity"></ion-input>
+        <ion-label color='primary'>City </ion-label>
+        <ion-input type="text" name="orgCity" [(ngModel)]="organization.city"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>State </ion-label>
-        <ion-input type="text" name="orgState"></ion-input>
+        <ion-label color='primary'>State </ion-label>
+        <ion-input type="text" name="orgState" [(ngModel)]="organization.state"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Zip code </ion-label>
-        <ion-input type="text" name="orgzip"></ion-input>
+        <ion-label color='primary'>Zip code </ion-label>
+        <ion-input type="text" name="orgzip" [(ngModel)]="organization.zipCode"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Phone # </ion-label>
-        <ion-input type="text" name="phnumb"></ion-input>
+        <ion-label color='primary'>Phone # </ion-label>
+        <ion-input type="text" name="phnumb" [(ngModel)]="organization.phone"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" name="email"></ion-input>
+        <ion-label color='primary'>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="organization.email"></ion-input>
       </ion-item>
 
         <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" name="password"></ion-input>
+        <ion-label color='primary'>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="organization.password"></ion-input>
       </ion-item>
 
       <div padding>

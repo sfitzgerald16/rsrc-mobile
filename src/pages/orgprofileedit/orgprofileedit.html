@@ -7,39 +7,39 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Organization Profile Edit Page</ion-title>
+    <ion-title>Organization Edit</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-list>
     <ion-item>
 <ion-label   color='primary'>Name of Organization</ion-label>
-<ion-input  type='text' name='orgname' value='Helping Hands Org'></ion-input>
+<ion-input  type='text' name='orgname' [(ngModel)]="org.name"></ion-input>
 </ion-item>
 <ion-item>
 <ion-label  color='primary'>Street address</ion-label>
-<ion-input  type='text' name='orgaddr' value='111, Main Street'></ion-input>
+<ion-input  type='text' name='orgaddr' [(ngModel)]="org.address"></ion-input>
 </ion-item>
 <ion-item>
 <ion-label  color='primary'>City</ion-label>
-<ion-input  type='text' name='orgcity' value='Fresno'></ion-input>
+<ion-input  type='text' name='orgcity' [(ngModel)]="org.city"></ion-input>
 </ion-item>
 <ion-item>
 <ion-label  color='primary'>State</ion-label>
-<ion-input type='text' name='orgstate' value='CA'></ion-input>
+<ion-input type='text' name='orgstate' [(ngModel)]="org.state"></ion-input>
 </ion-item>
 <ion-item>
 <ion-label  color='primary'>Zip code</ion-label>
-<ion-input  type='text' name='orgzipcode' value='99999'></ion-input>
+<ion-input  type='text' name='orgzipcode' [(ngModel)]="org.zipCode"></ion-input>
 </ion-item>
 <ion-item>
 <ion-label  color='primary'>Phone </ion-label>
-<ion-input  type='text' name='orgphone' value='222-1111-1111'></ion-input>
+<ion-input  type='text' name='orgphone' [(ngModel)]="org.phone"></ion-input>
 </ion-item>
 
 <ion-item>
 <ion-label  color='primary'>{{ 'EMAIL' | translate }}</ion-label>
-<ion-input type='email' name='orgemail' value='OrgExample@example.com'></ion-input>
+<ion-input type='email' name='orgemail' [(ngModel)]="org.email"></ion-input>
 </ion-item>
 <ion-item>
   <ion-label color='primary' fixed>Old Password</ion-label>
@@ -47,11 +47,11 @@
 </ion-item>
 <ion-item>
   <ion-label color='primary' fixed>New Password</ion-label>
-  <ion-input type="password" name="newpassword" value=""></ion-input>
+  <ion-input type="password" name="newpassword" [(ngModel)]="newPass"></ion-input>
 </ion-item>
 
 <div padding>
-<button ion-button color="primary" block>Update</button>
+<button ion-button color="primary" block (click)="update(org, newPass)">Update</button>
 </div>
 </ion-list>
 

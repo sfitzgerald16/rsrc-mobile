@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class Api {
-  url: string = 'http://localhost:8080/api';
+  url: string = 'http://localhost:8080/';
 
   //  public allow = new Headers({
   //    'Access-Control-Allow-Origin': '*',

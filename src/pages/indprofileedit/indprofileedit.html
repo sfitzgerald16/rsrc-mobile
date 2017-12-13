@@ -16,20 +16,20 @@
     <ion-list>
       <ion-item>
         <ion-label  color='primary'>First Name</ion-label>
-        <ion-input  type="text" name="firstName" value="Smith"></ion-input>
+        <ion-input  type="text" name="firstName" [(ngModel)]="user.firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color='primary' fixed>Last Name</ion-label>
-        <ion-input type="text" name="lastName" value = "Jmith"></ion-input>
+        <ion-input type="text" name="lastName" [(ngModel)]="user.lastName"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label color='primary' fixed>Phone # </ion-label>
-        <ion-input type="text" name="phnumb"value="111-1111-1111"></ion-input>
+        <ion-label color='primary' fixed>Zip Code</ion-label>
+        <ion-input type="text" name="zipcode" [(ngModel)]="user.zipCode"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color='primary' fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" name="email"value='example@example.com'></ion-input>
+        <ion-input type="email" name="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
         <ion-item>
@@ -38,11 +38,11 @@
       </ion-item>
       <ion-item>
         <ion-label color='primary' fixed>New Password</ion-label>
-        <ion-input type="password" name="password" value=""></ion-input>
+        <ion-input type="password" name="password" [(ngModel)]="newPass"></ion-input>
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>Update</button>
+        <button ion-button color="primary" block (click)="update(user, newPass)">Update</button>
       </div>
 
     </ion-list>

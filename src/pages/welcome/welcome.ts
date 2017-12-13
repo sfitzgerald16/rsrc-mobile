@@ -26,15 +26,21 @@ export class WelcomePage {
     this.headers.append('Content-Type', 'application/json');
   }
 
-  login(email: string, password: string) {
+  login(type: string, email: string, password: string) {
+    let url;
+    if(type === "user") {
+      url = 'http://localhost:8080/users/users/login';
+    } else if(type === 'organization') {
+      url = 'http://localhost:8080/organization/organization/login';
+    }
     this.http
-      .post('http://localhost:8080/users/users/login', { email, password }, { headers: this.headers })
+      .post(url, { email, password }, { headers: this.headers })
       .toPromise()
       .then((result: any) => {
         const res = result.json();
-        console.log(res);
         if (res.success) {
           // If result is a good login go to resource page
+          localStorage.setItem('user', JSON.stringify(res));
           this.navCtrl.push(MainPage);
         } else {
           // Login failed alert user

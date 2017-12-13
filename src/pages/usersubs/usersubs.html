@@ -1,0 +1,29 @@
+<ion-header class="title">{{title}}</ion-header>
+<ion-content has-footer="true" has-tabs="true">
+  <accordion *ngIf="this.user" [showArrows]="false" [closeOthers]="false" [expandAll]="false">
+    <accordion-group *ngFor="let org of allOrganizations" class="{{org.name}} orgpanel" heading="{{org.name}}">
+      <p class="orginfo">{{org.address}} {{org.city}}, {{org.state}} {{org.zipCode}} || {{org.phone}} || {{org.email}}</p>
+      <div *ngIf="org.categories.items && org.categories.length">
+        <ul *ngFor="let category of org.categories">
+          <li *ngFor="let item of org.categories.items[0].items">
+            {{item.name}}: {{item.quantity}}
+          </li>
+        </ul>
+      </div>
+    </accordion-group>
+  </accordion>
+  <div padding *ngIf="this.org && this.org.categories.items && this.org.categories.length">
+    <div *ngFor="let category of this.org.categories.items">
+      <div *ngFor="let item of category.items">
+        <ion-item>
+          <ion-label color='primary' fixed>{{item.name}}: </ion-label>
+          <ion-input type="text" value="{{item.quantity}}"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+  <div padding>
+    <button ion-button  *ngIf="this.org" color="primary" block>Update</button>
+  </div>
+</ion-content>
+

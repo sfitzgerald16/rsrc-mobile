@@ -16,21 +16,21 @@
   <ion-list>
     <ion-item>
       <ion-label fixed color='primary'>First Name</ion-label>
-      <ion-label fixed color='secondary'>Smith</ion-label>
+      <ion-label fixed color='secondary'>{{user.firstName}}</ion-label>
       
     </ion-item>
     <ion-item>
       <ion-label fixed color='primary'>Last Name</ion-label>
-      <ion-label fixed color='secondary'>Jmith</ion-label>
+      <ion-label fixed color='secondary'>{{user.lastName}}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label fixed color='primary'>Phone </ion-label>
-      <ion-label  color='secondary'>111-1111-1111</ion-label>
+      <ion-label fixed color='primary'>Zip Code</ion-label>
+      <ion-label  color='secondary'>{{user.zipCode}}</ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label fixed color='primary'>{{ 'EMAIL' | translate }}</ion-label>
-      <ion-label color='secondary'>example@example.com</ion-label>
+      <ion-label color='secondary'>{{user.email}}</ion-label>
     </ion-item>
 
    
