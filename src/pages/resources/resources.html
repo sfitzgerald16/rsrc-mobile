@@ -3,7 +3,7 @@
     <accordion [showArrows]="false" [closeOthers]="false" [expandAll]="false">
         <accordion-group class="women" heading="Women">
             <ul>
-                <li><a href="">Clothes</a></li>
+                <li (click)="navigateTo('Womens Clothes', 'clothes')">Clothes</li>
                 <li><a href="">Personal Care</a></li>
             </ul>
         </accordion-group>
@@ -17,7 +17,7 @@
         <accordion-group class="men" heading="Men">
             <ul>
                 <li><a href="">Clothes</a> </li>
-                <li><a href="">Personal Care</a></li>
+                <li (click)="navigateTo('Mens Personal Care', 'personal care')">Personal Care</li>
             </ul>
         </accordion-group>
 

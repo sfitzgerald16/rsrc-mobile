@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Organization Profile Page</ion-title>
+    <ion-title>Organization Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,32 +18,32 @@
     <ion-list>
             <ion-item>
         <ion-label  color='primary'>Name of Organization</ion-label>
-        <ion-label name='orgname' color='secondary'>Helping Hands Org</ion-label>
+        <ion-label name='orgname' color='secondary'>{{org.name}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label  color='primary'>Street address</ion-label>
-        <ion-label name='orgaddr' color='secondary'>111, Main Street</ion-label>
+        <ion-label name='orgaddr' color='secondary'>{{org.address}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label fixed color='primary'>City</ion-label>
-        <ion-label fixed name='orgcity' color='secondary'>Fresno</ion-label>
+        <ion-label fixed name='orgcity' color='secondary'>{{org.city}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label fixed color='primary'>State</ion-label>
-        <ion-label fixed name='orgstate' color='secondary'>CA</ion-label>
+        <ion-label fixed name='orgstate' color='secondary'>{{org.state}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label fixed color='primary'>Zip code</ion-label>
-        <ion-label fixed name='orgzipcode' color='secondary'>99999</ion-label>
+        <ion-label fixed name='orgzipcode' color='secondary'>{{org.zipCode}}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label fixed color='primary'>Phone </ion-label>
-        <ion-label name='orgphone'   color='secondary'>222-1111-1111</ion-label>
+        <ion-label name='orgphone'  color='secondary'>{{org.phone}}</ion-label>
       </ion-item>
   
       <ion-item>
         <ion-label  color='primary'>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-label name='orgemail' color='secondary'>OrgExample@example.com</ion-label>
+        <ion-label name='orgemail' color='secondary'>{{org.email}}</ion-label>
       </ion-item>
   
      

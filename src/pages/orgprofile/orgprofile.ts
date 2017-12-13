@@ -15,7 +15,10 @@ import { MainPage } from '../pages';
 })
 export class OrgprofilePage {
 
+  org: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.org = JSON.parse(localStorage.getItem('user')).org;
   }
 
   ionViewDidLoad() {

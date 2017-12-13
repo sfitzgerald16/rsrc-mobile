@@ -15,13 +15,17 @@ import { MainPage } from '../pages';
 })
 export class IndprofilePage {
 
+  user: any = {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IndprofilePage');
+    this.user = JSON.parse(localStorage.getItem('user')).user;
   }
   indproedit(){
-  this.navCtrl.push('IndprofileeditPage');
-}
+    this.navCtrl.push('IndprofileeditPage');
+  }
 }

@@ -1,18 +1,11 @@
-<!--
-  Generated template for the UsersubsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>usersubs</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-header class="title">{{title}}</ion-header>
+<ion-content has-footer="true" has-tabs="true">
+  <accordion [showArrows]="false" [closeOthers]="false" [expandAll]="false">
+    <accordion-group *ngFor="let org of allOrganizations" class="{{org.name}}" heading="{{org.name}}">
+      <ul>
+        <li *ngFor="let item of org.categories[0].items">{{item.name}}: {{item.quantity}}</li>
+      </ul>
+    </accordion-group>
+  </accordion>
 </ion-content>
+

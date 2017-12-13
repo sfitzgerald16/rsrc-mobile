@@ -24,4 +24,8 @@ export class ResourcesPage {
     console.log('ionViewDidLoad ResourcesPage');
   }
 
+  navigateTo(type: string, filter: string) {
+    this.navCtrl.push('UsersubsPage', { title: type, filter});
+  }
+
 }
