@@ -1,7 +1,8 @@
 <ion-header class="title">{{title}}</ion-header>
 <ion-content has-footer="true" has-tabs="true">
   <accordion [showArrows]="false" [closeOthers]="false" [expandAll]="false">
-    <accordion-group *ngFor="let org of allOrganizations" class="{{org.name}}" heading="{{org.name}}">
+    <accordion-group *ngFor="let org of allOrganizations" class="{{org.name}} orgpanel" heading="{{org.name}}">
+      <p class="orginfo">{{org.address}} {{org.city}}, {{org.state}} {{org.zipCode}} || {{org.phone}} || {{org.email}}</p>
       <ul>
         <li *ngFor="let item of org.categories[0].items">{{item.name}}: {{item.quantity}}</li>
       </ul>
