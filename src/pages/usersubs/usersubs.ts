@@ -42,7 +42,7 @@ export class UsersubsPage {
           if (response.json().org) {
             this.allOrganizations = response.json().org;
             this.allOrganizations.forEach(org => {
-              org.categories.items = org.categories.filter(category => {
+              org.categories = org.categories.filter(category => {
                 if (category.categoryName) {
                   return category.categoryName === this.navParams.get('filter')[0] || category.categoryName === this.navParams.get('filter')[1];
                 } else return false;
@@ -51,7 +51,7 @@ export class UsersubsPage {
           }
         });
     } else {
-      this.org.categories.items = this.org.categories.filter(category => {
+      this.org.categories = this.org.categories.filter(category => {
         if (category.categoryName) {
           return category.categoryName === this.navParams.get('filter')[0] || category.categoryName === this.navParams.get('filter')[1];
         } else return false;
